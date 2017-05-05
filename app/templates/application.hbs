@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Ember Data async relationships examples</h1>
+
+<p>Hi, this is an example blog to showcase different ways that ember-data loads relationships.</p>
+
+<h2>Posts</h2>
+
+{{#each model as |post|}}
+  <div class="post">
+    <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+  </div>
+{{/each}}
 
 {{outlet}}

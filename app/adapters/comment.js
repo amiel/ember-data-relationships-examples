@@ -11,7 +11,7 @@ export const COMMENT_MESSAGES = {
 
 export default DS.JSONAPIAdapter.extend({
   // For each comment in relationships without data, findRecord is called.
-  findRecord(store, type, id, snapshot) {
+  findRecord(store, type, id/*, snapshot */) {
     return {
       data: {
         id: id,

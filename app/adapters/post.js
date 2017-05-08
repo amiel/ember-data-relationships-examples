@@ -9,19 +9,39 @@ export default DS.JSONAPIAdapter.extend({
   findAll() {
     return resolve({
       data: [
+
         {
           id: 1,
-          type: 'post',
+          type: "post",
           attributes: {
-            title: 'This is post #1',
-            body: 'It was the best',
+            title: "This is post #1",
+            body: "This post's comments relationship has a links section",
           },
           relationships: {
             comments: {
-              links: { related: '/posts/1/comments' },
+              links: { related: "/posts/1/comments" },
             },
           },
         },
+
+        {
+          id: 2,
+          type: "post",
+          attributes: {
+            title: "This is post #2",
+            body: "This post's comments relationship has a data section",
+          },
+          relationships: {
+            comments: {
+              data: [
+                { id: 21, type: "comment" },
+                { id: 22, type: "comment" },
+                { id: 23, type: "comment" },
+              ],
+            },
+          },
+        },
+
       ],
     });
   },
@@ -36,7 +56,7 @@ export default DS.JSONAPIAdapter.extend({
             id: 11,
             type: 'comment',
             attributes: {
-              message: `Comment 11 was loaded via findHasMany`,
+              message: `Comment 11 was loaded via findHasMany in the post adapter`,
             },
           },
         ],

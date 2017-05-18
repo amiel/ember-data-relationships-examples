@@ -3,13 +3,13 @@ import DS from 'ember-data';
 
 const {
   RSVP: { resolve },
+  Logger: { log },
 } = Ember;
 
 export default DS.JSONAPIAdapter.extend({
   findAll() {
     return resolve({
       data: [
-
         {
           id: 1,
           type: "post",
@@ -90,7 +90,7 @@ export default DS.JSONAPIAdapter.extend({
         ],
       });
     } else {
-      console.log(this.toString(), "findHasMany called with link", link);
+      log(this.toString(), "findHasMany called with link", link);
       return this._super(...arguments);
     }
   },

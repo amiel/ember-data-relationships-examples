@@ -42,6 +42,15 @@ export default DS.JSONAPIAdapter.extend({
           },
         },
 
+        {
+          id: 3,
+          type: "post",
+          attributes: {
+            title: "This is blog post #3",
+            body: "This post has no comments",
+          },
+        },
+
       ],
     });
   },

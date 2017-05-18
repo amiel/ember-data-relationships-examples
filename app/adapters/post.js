@@ -14,7 +14,7 @@ export default DS.JSONAPIAdapter.extend({
           id: 1,
           type: "post",
           attributes: {
-            title: "This is post #1",
+            title: "This is blog post #1",
             body: "This post's comments relationship has a links section",
           },
           relationships: {
@@ -28,7 +28,7 @@ export default DS.JSONAPIAdapter.extend({
           id: 2,
           type: "post",
           attributes: {
-            title: "This is post #2",
+            title: "This is blog post #2",
             body: "This post's comments relationship has a data section",
           },
           relationships: {

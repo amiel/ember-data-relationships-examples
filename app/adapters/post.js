@@ -51,6 +51,25 @@ export default DS.JSONAPIAdapter.extend({
           },
         },
 
+        {
+          id: 4,
+          type: 'post',
+          attributes: {
+            title: 'This is blog post #4',
+            body: 'This post has mixed links and data',
+          },
+          relationships: {
+            comments: {
+              links: {
+                related: { href: '/posts/4/comments' },
+              },
+              data: [
+                { id: 41, type: 'comment' },
+              ],
+            },
+          },
+        },
+
       ],
     });
   },
@@ -71,6 +90,7 @@ export default DS.JSONAPIAdapter.extend({
         ],
       });
     } else {
+      console.log(this.toString(), "findHasMany called with link", link);
       return this._super(...arguments);
     }
   },

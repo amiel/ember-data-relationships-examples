@@ -47,7 +47,7 @@ export default DS.JSONAPIAdapter.extend({
           type: "post",
           attributes: {
             title: "This is blog post #3",
-            body: "This post has no comments",
+            body: "This post has no comments in the relationships section",
           },
         },
 
@@ -151,6 +151,25 @@ export default DS.JSONAPIAdapter.extend({
             type: 'comment',
             attributes: {
               message: `Comment 42 was loaded via findHasMany in the post adapter`,
+            },
+          },
+        ],
+      });
+    } else if (link === '/posts/3/comments') {
+      return resolve({
+        data: [
+          {
+            id: 31,
+            type: 'comment',
+            attributes: {
+              message: `Comment 31 was loaded via findHasMany in the post adapter`,
+            },
+          },
+          {
+            id: 32,
+            type: 'comment',
+            attributes: {
+              message: `Comment 32 was loaded via findHasMany in the post adapter`,
             },
           },
         ],

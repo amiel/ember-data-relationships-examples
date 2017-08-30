@@ -124,7 +124,15 @@ export default DS.JSONAPIAdapter.extend({
   // For each comments relationship with a link (each post, not each comment),
   // findHasMany is called with that link.
   findHasMany(store, snapshot, link/*, relationship */) {
-    if (link === '/posts/1/comments') {
+    let url;
+
+    if (link === 'urlTemplate:comments') {
+      url = `/posts/${snapshot.id}/comments`;
+    } else {
+      url = link;
+    }
+
+    if (url === '/posts/1/comments') {
       return resolve({
         data: [
           {
@@ -136,7 +144,7 @@ export default DS.JSONAPIAdapter.extend({
           },
         ],
       });
-    } else if (link === '/posts/4/comments?1') {
+    } else if (url === '/posts/4/comments?1') {
       return resolve({
         data: [
           {
@@ -155,7 +163,7 @@ export default DS.JSONAPIAdapter.extend({
           },
         ],
       });
-    } else if (link === '/posts/3/comments') {
+    } else if (url === '/posts/3/comments') {
       return resolve({
         data: [
           {
@@ -175,7 +183,7 @@ export default DS.JSONAPIAdapter.extend({
         ],
       });
     } else {
-      log(this.toString(), "findHasMany called with unhandled link =", link);
+      log(this.toString(), "findHasMany called with unhandled url =", url);
       return this._super(...arguments);
     }
   },

@@ -8,6 +8,8 @@ const {
 
 export default DS.JSONAPIAdapter.extend({
   findAll() {
+    // Normally, an ajax call would be made. Hard-coding the response here
+    // makes it easy to show a lot of examples.
     return resolve({
       data: [
         {
@@ -127,11 +129,15 @@ export default DS.JSONAPIAdapter.extend({
     let url;
 
     if (link === 'urlTemplate:comments') {
+      // This case is hard-coded to demonstrate the technique here, but
+      // normally, you would want to do something like use buildURL or
+      // ember-data-url-templates.
       url = `/posts/${snapshot.id}/comments`;
     } else {
       url = link;
     }
 
+    // Normally, an ajax call would be made with each of these urls.
     if (url === '/posts/1/comments') {
       return resolve({
         data: [

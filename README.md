@@ -1,52 +1,25 @@
 # ember-data-relationships-examples
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This ember app contains examples to demonstrate the concepts discussed in my blog series: "[How Ember Data Loads Async Relationships][]".
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+[How Ember Data Loads Async Relationships]: http://www.amielmartin.com/blog/2017/05/05/how-ember-data-loads-relationships-part-1/
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/amiel/ember-data-relationships-examples.git` this repository
 * `cd ember-data-relationships-examples`
-* `npm install`
-* `bower install`
+* `yarn install`
 
 ## Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## What's Inside
 
-Make use of the many generators for code, try `ember help generate` for more details
+This example application is a psuedo blog. It has posts and comments and other relationships on the post to demonstrate various scenarios of loading data through relationships.
 
-### Running Tests
+All of the data is hard-coded as JSON:API in the adapters. This results in some long files with data. The benefit, though, is that it makes it very obvious which adapter callback is called for each piece of data.
 
-* `ember test`
-* `ember test --server`
 
-### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
